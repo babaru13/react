@@ -4,7 +4,7 @@ import "./app.scss";
 
 const App = ({ title }) => {
 
-    const [messages, addMessages] = useState('Привет', 'Hello', 'Hola');
+    const [messages, addMessages] = useState('Привет', 'Hello', 'Hola', 'Hallo');
 
     return (
         <div className='full-screen'>
