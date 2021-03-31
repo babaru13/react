@@ -35,27 +35,50 @@ h1{
     text-align: center;
 }
 
-.button-line{
-      
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      background: transparent;
-      border: 1px solid #000000;
-      color: #000000;
-      text-align: center;
-      font-size: 1.4em;
-      padding: 20px 40px;
-      text-decoration: none;
-      transition: all 0.5s ease;
-      margin: 0 auto;
-      display: block;
-      cursor: pointer;
-      min-width: 400px;
-      border-radius: 8px;
+.form{
+    &__field{
+        border: 1px solid #000000;
+        border-radius: 8px;
+        min-width: 400px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        height: 68px;
+        box-sizing: border-box;
+        display: block;
 
-    &:hover{
-        background-color: #000000;
+        &:focus{
+            outline: none;
+        }
+    }
+
+    &__button{
+        box-sizing: border-box;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: transparent;
+        border: 1px solid #000000;
+        background: #000000;
         color: #ffffff;
+        text-align: center;
+        font-size: 1.4em;
+        padding: 20px;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+        min-width: 400px;
+        border-radius: 8px;
+
+        &:hover{
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        &:focus{
+            outline: none;
+        }
     }
 }
 
@@ -70,4 +93,4 @@ h1{
         display: block;
         margin: 10px 0; 
     }
-}
+} 
