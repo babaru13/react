@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import {RaisedButton, TextField, Chip, MuiThemeProvider} from "material-ui";
+import SendIcon from '@material-ui/icons/Send';
+import {Fab, TextField, Chip} from "@material-ui/core";
 
-import { AUTHORS } from "../utils/constants";
+import {AUTHORS} from "../utils/constants";
 
 export default function Form({ onSetMessage}) {
     const [value, setValue] = useState('');
@@ -18,27 +19,25 @@ export default function Form({ onSetMessage}) {
     }
 
     return (
-        <MuiThemeProvider>
-            <form 
-            onSubmit={handleSubmit}
-            className="form">
-                <div className="form__row">
-                    <TextField
-                        floatingLabelText="Введите сообщение"
-                        type="text"
-                        value={value}
-                        required
-                        className="form__field"
-                        onChange={handleChange}
-                    />
-                    <RaisedButton
-                    primary={true}
-                    label="Отправить"
+        <form 
+        onSubmit={handleSubmit}
+        className="form">
+            <div className="form__row">
+                <TextField
+                    label="Введите сообщение"
+                    type="text"
+                    value={value}
+                    required
+                    className="form__field"
+                    onChange={handleChange}
+                />
+                <Fab 
+                    color="primary"
                     type="submit"
-                    className="form__button"
-                    />
-                </div>
-            </form>
-        </MuiThemeProvider>
+                    className="form__button">
+                    <SendIcon />
+                </Fab>
+            </div>
+        </form>
     )
 } 

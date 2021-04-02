@@ -1,24 +1,20 @@
 import React from "react";
 
-import {grey300} from 'material-ui/styles/colors';
-import {List, ListItem, MuiThemeProvider} from 'material-ui';
+import {List, ListItem, ListItemText} from '@material-ui/core';
 
-import { CHAT_LIST } from "../utils/constants";
+import {CHAT_LIST} from "../utils/constants";
 
 export default function ChatList() {
 
     return (
-    	<MuiThemeProvider>
-	        <div className="chat-list">
-			    <List>
-                    {CHAT_LIST.map((name, i) => (
-                    	<ListItem 
-                    	primaryText={name} 
-						className="chat-list__item"
-                    	/>
-                    ))}
-			    </List>
-	        </div>
-        </MuiThemeProvider>
+        <div className="chat-list">
+		    <List>
+                {CHAT_LIST.map((name, i) => (
+                	<ListItem button className="chat-list__item">
+                		<ListItemText primary={name} />
+                	</ListItem>
+                ))}
+		    </List>
+        </div>
     )
 }

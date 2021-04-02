@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 
-import {cyan100, lightGreenA100} from "material-ui/styles/colors";
-import {FontIcon, Chip, MuiThemeProvider} from "material-ui";
+import {FontIcon, Chip} from "@material-ui/core";
 
 import "./app.scss";
 
@@ -30,30 +29,26 @@ const App = ({ title }) => {
     }, [messages]);
 
     return (
-        <MuiThemeProvider>
-            <div className="layout">
-                <Header title={title} />
-                <br />
-                <div className="row">
-                    <div className="col-60">
-                        <div className="messages">
-                            {messages.map(({ text, author }, i) => (
-                                <Chip 
-                                className="messages__item"
-                                key={i} 
-                                backgroundColor={author === AUTHORS.BOT ? cyan100 : lightGreenA100}>
-                                  {author}: {text}
-                                </Chip>
-                            ))}
-                        </div>
-                        <Form onSetMessage={setMessage} />
+        <div className="layout">
+            <Header title={title} />
+            <br />
+            <div className="row">
+                <div className="col-60">
+                    <div className="messages">
+                        {messages.map(({ text, author }, i) => (
+                            <Chip 
+                            className={`messages__item ${author === AUTHORS.BOT ? 'messages__item_first' : 'messages__item_second'}`}                          
+                            label={`${author}: ${text}`}
+                            />
+                        ))}
                     </div>
-                    <div className="col-40">
-                        <ChatList />  
-                    </div>
+                    <Form onSetMessage={setMessage} />
+                </div>
+                <div className="col-40">
+                    <ChatList />
                 </div>
             </div>
-        </MuiThemeProvider>
+        </div>
    );
 };
 
