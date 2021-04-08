@@ -1,10 +1,9 @@
 import React from "react";
 
-export default function Header({title}) {
-
+export const Header = () => {
     return (
         <div className="header">
-            <h1>{ title }</h1>
+            <h1>Header</h1>
         </div>
-    )
-}
+    );
+};
