@@ -1,9 +1,11 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
-import { AUTHORS } from "../utils/constants";
+import SendIcon from '@material-ui/icons/Send';
+import {Fab, TextField, Chip} from "@material-ui/core";
+
+import {AUTHORS} from "../utils/constants";
 
 export default function Form({ onSetMessage}) {
-
     const [value, setValue] = useState('');
     
     const handleChange = (e) => {
@@ -20,20 +22,22 @@ export default function Form({ onSetMessage}) {
         <form 
         onSubmit={handleSubmit}
         className="form">
-            <input
-            className="form__field"
-            placeholder="Введите сообщение"
-            type="text"
-            value={value}
-            minlength="3"
-            required
-            onChange={handleChange}
-            />
-            <button  
-            className="form__button"
-            type="submit">
-                Отправить
-            </button>
+            <div className="form__row">
+                <TextField
+                    label="Введите сообщение"
+                    type="text"
+                    value={value}
+                    required
+                    className="form__field"
+                    onChange={handleChange}
+                />
+                <Fab 
+                    color="primary"
+                    type="submit"
+                    className="form__button">
+                    <SendIcon />
+                </Fab>
+            </div>
         </form>
     )
-}
+} 
