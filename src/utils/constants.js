@@ -4,9 +4,16 @@ export const AUTHORS = {
 }
 
 export const CHAT_LIST = [
-	'Чат 1',
-	'Чат 2',
-	'Чат 3',
-	'Чат 4',
-	'Чат 5',
+	{
+		id: 'id1',
+		name: 'Чат 1',
+	},
+	{
+		id: 'id2',
+		name: 'Чат 2',
+	},
+	{
+		id: 'id3',
+		name: 'Чат 3',
+	}
 ]

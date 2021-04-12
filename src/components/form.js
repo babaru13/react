@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+  import React, { useState, useRef } from "react";
 
 import SendIcon from '@material-ui/icons/Send';
-import {Fab, TextField, Chip} from "@material-ui/core";
+import { Fab, TextField, Chip } from "@material-ui/core";
 
-import {AUTHORS} from "../utils/constants";
+import { AUTHORS } from "../utils/constants";
 
 export default function Form({ onSetMessage}) {
     const [value, setValue] = useState('');
@@ -39,5 +39,5 @@ export default function Form({ onSetMessage}) {
                 </Fab>
             </div>
         </form>
-    )
+    );
 } 
