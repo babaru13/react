@@ -20,7 +20,7 @@ export const Routes = () => (
                 <Route exact path="/chats">
                     <ChatList />
                 </Route>
-                <Route path="/profile/">
+                <Route exact path="/profile/">
                     <Profile />
                 </Route>
     			<Route path="/chats/:chatId">
