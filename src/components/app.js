@@ -5,7 +5,6 @@ import "./app.scss";
 
 import { usePrev } from "../utils/hooks";
 import { AUTHORS } from "../utils/constants";
-import { Header } from "./header";
 import { Chat } from "./chat";
 import { ChatList } from "./chatList";
 
@@ -47,9 +46,7 @@ export const App = () => {
     }, [messages]);
 
     return (
-        <div className="layout">
-            <Header />
-            <br />
+        <div>
             <div className="row">
                 <div className="col-60">
                     <Chat messages={messages[chatId]} onSetMessage={setMessage} />
